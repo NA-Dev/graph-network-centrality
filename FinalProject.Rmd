@@ -7,9 +7,12 @@ output:
   html_document:
     df_print: paged    
     toc: true
+    toc_float: true
     toc_depth: 3
     number_sections: false
     theme: united
+    highlight: null
+    css: modest.css
 
 editor_options:
   chunk_output_type: inline
@@ -61,8 +64,12 @@ dir = '/home/nadev/Repositories/graph-network-centrality'
 setwd(dir)
 set.seed(2019)
 
-data = read.csv('Data/hollywood_dataset.csv', stringsAsFactors=FALSE)
+data = read.csv('hollywood_dataset.csv', stringsAsFactors=FALSE)
 ```
+
+# Executive Summary
+
+In graph networks, it is often desired to find the most central figure in the group. However, there are many choices of how to define and calculate centrality. Using the Hollywood network of actors and recent films as an example network we give a detailed discussion on seven different options, letting you know when to choose and how to interpret each centrality score. Finally, we also discuss how the incorporation of edge weights can change these calculations. In Hollywood, we came to the conclusion that Charlize Theron is the most central figure in recent years by a variety of the centrality types.
 
 # Introduction
 
@@ -306,7 +313,7 @@ comps = components(G3)
 G3 = induced_subgraph(G3, which(comps$membership == which.max(comps$csize)))
 ```
 
-![](Data Analysis/FullDataset/Images/Clusters.png)
+![](Images/FullDataSet/Clusters.png)
 
 # Six degrees of who?
 
@@ -398,7 +405,7 @@ ggraph(layout) +
 
 ```
 
-![](Data Analysis/SubsetDataset/Images/Unweighted/Degree.png)
+![](Images/SubsetDataSet/Unweighted/Degree.png)
 
 (Note: This code for plotting is virtually identical for every centrality measure with "degree" substituted with the attribute names given to each of the other metrics. I will not show this redundant code in the remaining sections.)
 
@@ -441,7 +448,7 @@ Once again Anna Kendrick, Charlize Theron, and the Rock on top! While Shia LaBeo
 
 Here is a plot of our network of actors based on closeness:
 
-![](Data Analysis/SubsetDataset/Images/Unweighted/Closeness.png)
+![](Images/SubsetDataSet/Unweighted/Closeness.png)
 
 ## Betweenness
 
@@ -477,7 +484,7 @@ Charlize Theron appears to have the highest betweenness score in our entire data
 V(G1)$betweenness = betweenness(G1, directed=FALSE, weights = weights, normalized = FALSE)
 ```
 
-![](Data Analysis/SubsetDataset/Images/Unweighted/Betweenness.png)
+![](Images/SubsetDataSet/Unweighted/Betweenness.png)
 
 ## Eigen, Authority, and Hub
 
@@ -515,7 +522,7 @@ V(G1)$authority = authority_score(G1, scale = TRUE, weights = weights)$vector
 V(G1)$hub = hub_score(G1, scale = TRUE, weights = weights)$vector
 ```
 
-![](Data Analysis/SubsetDataset/Images/Unweighted/Eigen.png)
+![](Images/SubsetDataSet/Unweighted/Eigen.png)
 
 ## Alpha
 
@@ -552,7 +559,7 @@ V(G1)$alpha = alpha_centrality(G1, alpha = 0.8, loops = FALSE,
                  exo = E(G1)$orderprod, weights = weights, tol = 1e-07, sparse = TRUE)
 ```
 
-![](Data Analysis/SubsetDataset/Images/Unweighted/AlphaOrderprod.png)
+![](Images/SubsetDataSet/Unweighted/AlphaOrderprod.png)
 
 ## Power
 
@@ -595,9 +602,9 @@ V(G1)$negpower = power_centrality(G1, loops = FALSE,
 ```
 
 
-![](Data Analysis/SubsetDataset/Images/Unweighted/PowerCooperative.png)
+![](Images/SubsetDataSet/Unweighted/PowerCooperative.png)
 
-![](Data Analysis/SubsetDataset/Images/Unweighted/PowerCompetitive.png)
+![](Images/SubsetDataSet/Unweighted/PowerCompetitive.png)
 
 ## Subgraph
 
@@ -624,7 +631,7 @@ ggcorrplot(cor(centralities), type = "lower",
            title="Centrality Correlations - Unweighted")
 ```
 
-![](Data Analysis/SubsetDataset/Images/Unweighted/CentralityCorrelationsUnweighted.png)
+![](Images/SubsetDataSet/Unweighted/CentralityCorrelationsUnweighted.png)
 
 We can see from these results that the most similar centrality measures are eigen, hub, and authority. In fact, for unweighted, undirected networks like ours these will always be identical. These are also very highly correlated with subgraph and closeness centrality.
 

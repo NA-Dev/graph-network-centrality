@@ -1,0 +1,269 @@
+# Theme from: https://github.com/nwstephens/rmdcss
+
+@media print {
+  *,
+  *:before,
+  *:after {
+    background: transparent !important;
+    color: #000 !important;
+    box-shadow: none !important;
+    text-shadow: none !important;
+  }
+
+  a,
+  a:visited {
+    text-decoration: underline;
+  }
+
+  a[href]:after {
+    content: " (" attr(href) ")";
+  }
+
+  abbr[title]:after {
+    content: " (" attr(title) ")";
+  }
+
+  a[href^="#"]:after,
+  a[href^="javascript:"]:after {
+    content: "";
+  }
+
+  pre,
+  blockquote {
+    border: 1px solid #999;
+    page-break-inside: avoid;
+  }
+
+  thead {
+    display: table-header-group;
+  }
+
+  tr,
+  img {
+    page-break-inside: avoid;
+  }
+
+  img {
+    max-width: 100% !important;
+  }
+
+  p,
+  h2,
+  h3 {
+    orphans: 3;
+    widows: 3;
+  }
+
+  h2,
+  h3 {
+    page-break-after: avoid;
+  }
+}
+
+pre,
+code {
+  font-family: Menlo, Monaco, "Courier New", monospace;
+}
+
+pre {
+  padding: .5rem;
+  line-height: 1.25;
+  overflow-x: scroll;
+}
+
+a,
+a:visited {
+  color: #3498db;
+}
+
+a:hover,
+a:focus,
+a:active {
+  color: #2980b9;
+}
+
+.modest-no-decoration {
+  text-decoration: none;
+}
+
+html {
+  font-size: 12px;
+}
+
+@media screen and (min-width: 32rem) and (max-width: 48rem) {
+  html {
+    font-size: 15px;
+  }
+}
+
+@media screen and (min-width: 48rem) {
+  html {
+    font-size: 16px;
+  }
+}
+
+body {
+  line-height: 1.85;
+}
+
+p,
+.modest-p {
+  font-size: 1.35rem;
+  margin-bottom: 1.3rem;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: 'Open Sans Condensed', Arial, sans-serif;
+}
+
+h1,
+.modest-h1 {
+  margin-top: 0;
+  font-size: 2.5rem;
+}
+
+h2,
+.modest-h2 {
+  font-size: 2.15rem;
+}
+
+h3,
+.modest-h3 {
+  font-size: 1.75rem;
+}
+
+h4,
+.modest-h4 {
+  font-size: 1.414rem;
+}
+
+h5,
+.modest-h5 {
+  font-size: 1.121rem;
+}
+
+h6,
+.modest-h6 {
+  font-size: .88rem;
+}
+
+
+
+h1,
+.modest-h1,
+h2,
+.modest-h2,
+h3,
+.modest-h3,
+h4,
+.modest-h4 {
+  margin: 3rem 0 .75rem 0;
+  line-height: 1.42;
+  background-color: #e9f5f9;
+  margin-top: 4rem;
+  font-weight: bold;
+  border-bottom: none;
+  text-align: center;
+}
+
+h1.title {
+  margin-top: 0;
+  padding: 1rem 5rem 2rem 4rem;
+  background-color: #77b4cc;
+  color: white;
+  line-height: normal;
+  font-family: 'Times New Roman', serif; 
+  font-size: 3rem; 
+  font-weight: normal;
+  text-align: center; 
+  text-transform: uppercase; 
+}
+
+h4.author { 
+  display:flex;
+  text-align: center;
+  font-family: 'Open Sans Condensed', sans-serif; 
+  color: #909090;
+  font-size: 1.25rem;
+  font-weight: normal;
+  margin: 0;
+  background-color: inherit;
+}
+
+
+h4.author:before, h4.author:after {
+  content:'';
+  flex:1;
+  border-bottom: groove 2px;
+  margin:auto 0.5em;
+}
+
+small,
+.modest-small {
+  font-size: .707em;
+}
+
+/* https://github.com/mrmrs/fluidity */
+
+img,
+canvas,
+iframe,
+video,
+svg,
+select,
+textarea {
+  max-width: 100%;
+  box-shadow: 4px 6px 11px 2px #cccccc;
+  border-radius: 15px;
+  padding: 15px;
+  margin: 40px 0px;
+}
+
+@import url(http://fonts.googleapis.com/css?family=Open+Sans+Condensed:300,300italic,700);
+
+@import url(http://fonts.googleapis.com/css?family=Arimo:700,700italic);
+
+html {
+  font-size: 18px;
+  max-width: 100%;
+}
+
+body {
+  color: #444;
+  font-family: 'Open Sans Condensed', Arial, sans-serif;
+  font-weight: 300;
+  margin: 0 auto;
+  max-width: 65rem;
+  line-height: 1.45;
+  padding: .25rem;
+}
+
+blockquote {
+  border-left: 8px solid #fafafa;
+  padding: 1rem;
+}
+
+pre,
+code {
+  background-color: #fafafa;
+}
+
+div.tocify {
+    font-size: 1.25em;
+}
+
+div.tocify .list-group-item.active, 
+div.tocify .list-group-item.active:hover, 
+div.tocify .list-group-item.active:focus {
+    z-index: 2;
+    color: #ffffff;
+    background-color: #77b4cc;
+    border-color: #77b4cc;
+}
+
+
