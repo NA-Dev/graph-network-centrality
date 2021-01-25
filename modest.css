@@ -221,7 +221,10 @@ textarea {
   box-shadow: 4px 6px 11px 2px #cccccc;
   border-radius: 15px;
   padding: 15px;
-  margin: 40px 0px;
+  margin: 40px auto;
+  display: block;
+  width: 600px;
+  max-width: 100%;
 }
 
 @import url(http://fonts.googleapis.com/css?family=Open+Sans+Condensed:300,300italic,700);
