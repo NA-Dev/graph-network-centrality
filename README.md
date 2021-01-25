@@ -2,11 +2,13 @@
 
 
 
+
+
 ## Executive Summary
 
 In graph networks, it is often desired to find the most central figure in the group. However, there are many choices of how to define and calculate centrality. Using the Hollywood network of actors and recent films as an example network we give a detailed discussion on seven different options, letting you know when to choose and how to interpret each centrality score. Finally, we also discuss how incorporating edge weights can change these calculations. In Hollywood, we came to the conclusion that Charlize Theron is the most central figure in recent years by a variety of the centrality types.
 
-**See FinalProject.html or FinalProject.pdf for the full report.**
+**Access full report at https://htmlpreview.github.io/?https://github.com/NA-Dev/graph-network-centrality/blob/main/FinalProject.html**
 
 ## Data Sources
 
